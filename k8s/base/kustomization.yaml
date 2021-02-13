@@ -1,0 +1,5 @@
+resources:
+  - manifests.yaml
+
+commonLabels:
+  app.kubernetes.io/name: my-app

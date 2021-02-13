@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  selector: {}
+  template:
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-app
+spec:
+  selector: {}
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP

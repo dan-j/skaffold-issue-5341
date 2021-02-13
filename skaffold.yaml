@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta3
+kind: Config
+
+metadata:
+  name: my-image
+
+build:
+  artifacts:
+    - image: my-image
+
+deploy:
+  kustomize:
+    paths:
+      - k8s/base
